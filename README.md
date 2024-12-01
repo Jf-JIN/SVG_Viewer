@@ -7,7 +7,7 @@ exe 下载链接 | exe download link:
 
 https://github.com/Jf-JIN/SVG_Viewer/releases/tag/SVG_Viewer
 
-<div style="display:inline-block;"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_zh.png" alt="exmaple_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_en.png" alt="exmaple_en.png" height = "200"><img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_zh.png" alt="exmaple_menu_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_en.png" alt="exmaple_menu_en.png" height = "200"> </div>
+<div style="display:inline-block;"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_zh.png" alt="exmaple_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_en.png" alt="exmaple_en.png" height = "200"> </div> <div style="display:inline-block;"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_zh.png" alt="exmaple_menu_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_en.png" alt="exmaple_menu_en.png" height = "200"> </div>
 
 
 * Icon 来源 | Icon source:
