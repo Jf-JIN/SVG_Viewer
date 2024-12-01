@@ -16,4 +16,4 @@ A software for viewing SVG thumbnails and generating C++ or Python code
 * 打包所用库   Library used for packaging: PyInstaller
 * UI框架   UI framework: PyQt5
 
-<div style="display:inline-block;"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_zh.png" alt="exmaple_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_en.png" alt="exmaple_en.png" height = "200"></div>
+<div style="display:inline-block;"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_zh.png" alt="exmaple_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_en.png" alt="exmaple_en.png" height = "200"><img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_zh.png" alt="exmaple_menu_zh.png" height = "200"> <img src="https://github.com/Jf-JIN/SVG_Viewer/blob/main/image/exmaple_menu_zh.png" alt="exmaple_menu_zh.png" height = "200"> </div>
