@@ -392,11 +392,11 @@ class SvgReader(QWidget):
     def timeout_update(self):
         new_dict = self.get_time_dict()
 
-        # 如果新字典和旧字典相同，直接返回
+        # 如果新字典和旧字典相同, 直接返回
         if len(new_dict) == len(self.svg_dict) and all(new_dict.get(item) == self.svg_dict.get(item, '') for item in new_dict):
             return
 
-        # 如果新字典与旧字典不同，更新字典并调用 set_svg()
+        # 如果新字典与旧字典不同, 更新字典并调用 set_svg()
         self.svg_dict = new_dict
         self.set_svg()
 
