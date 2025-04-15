@@ -21,7 +21,7 @@ class SettingManager():
 
     方法:
     - open_file_to_json(file_path: str) -> None | dict: 打开文件并将其转换为JSON格式
-    - write_file_to_json(content: dict, file_path: str = None) -> None: 将字典内容写入文件并以JSON格式保存。如果未指定文件路径, 则使用默认设置文件路径。
+    - write_file_to_json(content: dict, file_path: str = None) -> None: 将字典内容写入文件并以JSON格式保存. 如果未指定文件路径, 则使用默认设置文件路径. 
     """
 
     def __init__(self, exe_folder_path: str) -> None:
@@ -51,11 +51,11 @@ class SettingManager():
 
     def write_file_to_json(self, content: dict = None, file_path: str = None) -> None:
         """
-        将字典内容写入文件并以JSON格式保存。
+        将字典内容写入文件并以JSON格式保存. 
 
         参数:
-        - content(dict): 要写入文件的字典内容。
-        - file_path(str, 可选): 要写入的文件路径。如果未指定, 则使用默认设置路径。
+        - content(dict): 要写入文件的字典内容. 
+        - file_path(str, 可选): 要写入的文件路径. 如果未指定, 则使用默认设置路径. 
         """
         if not file_path:
             file_path = self.__setting_path
@@ -84,13 +84,13 @@ class SettingManager():
     # 检查 json 格式
     def __check_json(self, file_path: str):
         """
-        检查 JSON 文件并返回解析后的数据。
+        检查 JSON 文件并返回解析后的数据. 
 
         参数:
-        - file_path(str): 要检查的 JSON 文件路径。
+        - file_path(str): 要检查的 JSON 文件路径. 
 
         返回值:
-        - temp(dict): 解析后的 JSON 数据。
+        - temp(dict): 解析后的 JSON 数据. 
         """
         try:
             data_str = self.__open_file(file_path)
@@ -102,25 +102,25 @@ class SettingManager():
     # 检查 类型
     def __check_type(self, content: dict) -> dict:
         """
-        检查字典内容的类型, 并根据默认设置进行修复。
+        检查字典内容的类型, 并根据默认设置进行修复. 
 
         参数:
-        - content(dict): 要检查和修复类型的字典内容。
+        - content(dict): 要检查和修复类型的字典内容. 
 
         返回值:
-        - temp(dict): 修复后的字典内容。
+        - temp(dict): 修复后的字典内容. 
         """
         temp = copy.deepcopy(content)
         flag_write = False
 
         def __scan(current_key: str, current_value, default_value) -> None:
             """
-            递归扫描字典内容, 并根据默认设置修复类型。
+            递归扫描字典内容, 并根据默认设置修复类型. 
 
             参数:
-            - current_key(str): 当前键。
-            - current_value(any): 当前值。
-            - default_value(any): 默认设置的值。
+            - current_key(str): 当前键. 
+            - current_value(any): 当前值. 
+            - default_value(any): 默认设置的值. 
             """
             nonlocal temp
             nonlocal flag_write
@@ -148,13 +148,13 @@ class SettingManager():
     # 检查 冗余
     def __check_redundancy(self, content: dict) -> dict:
         """
-        检查字典内容中的冗余项, 并根据默认设置进行修复。
+        检查字典内容中的冗余项, 并根据默认设置进行修复. 
 
         参数:
-        - content(dict): 要检查和修复冗余项的字典内容。
+        - content(dict): 要检查和修复冗余项的字典内容. 
 
         返回值:
-        - compare_dict(dict): 修复后的字典内容。
+        - compare_dict(dict): 修复后的字典内容. 
         """
         compare_dict = copy.deepcopy(content)
         temp = {}
@@ -162,11 +162,11 @@ class SettingManager():
 
         def __scan(parent: dict, default: dict) -> None:
             """
-            递归扫描字典内容, 并根据默认设置修复冗余项。
+            递归扫描字典内容, 并根据默认设置修复冗余项. 
 
             参数:
-            - parent(dict): 当前父级字典。
-            - default(dict): 默认设置的字典。
+            - parent(dict): 当前父级字典. 
+            - default(dict): 默认设置的字典. 
             """
             nonlocal flag_write
             keys_to_delete = []
@@ -191,25 +191,25 @@ class SettingManager():
     # 检查 丢失
     def __check_lost(self, content: dict) -> dict:
         """
-        检查字典内容中的丢失项, 并根据默认设置进行修复。
+        检查字典内容中的丢失项, 并根据默认设置进行修复. 
 
         参数:
-        - content(dict): 要检查和修复丢失项的字典内容。
+        - content(dict): 要检查和修复丢失项的字典内容. 
 
         返回值:
-        - temp(dict): 修复后的字典内容。
+        - temp(dict): 修复后的字典内容. 
         """
         temp = {}
         flag_write = False
 
         def __scan(parent: dict, compare: dict, temp_dict: dict) -> None:
             """
-            递归扫描字典内容, 并根据默认设置修复丢失项。
+            递归扫描字典内容, 并根据默认设置修复丢失项. 
 
             参数:
-            - parent(dict): 当前父级字典。
-            - compare(dict): 要比较的字典。
-            - temp_dict(dict): 修复后的字典。
+            - parent(dict): 当前父级字典. 
+            - compare(dict): 要比较的字典. 
+            - temp_dict(dict): 修复后的字典. 
             """
             nonlocal flag_write
             for key, default_value in parent.items():
@@ -235,14 +235,14 @@ class SettingManager():
 
     def __scan_to_build(self, parent: dict, temp_dict: dict) -> dict:
         """
-        递归扫描字典内容, 并构建修复后的字典。
+        递归扫描字典内容, 并构建修复后的字典. 
 
         参数:
-        - parent(dict): 当前父级字典。
-        - temp_dict(dict): 修复后的字典。
+        - parent(dict): 当前父级字典. 
+        - temp_dict(dict): 修复后的字典. 
 
         返回值:
-        - temp_dict(dict): 修复后的字典。
+        - temp_dict(dict): 修复后的字典. 
         """
         for key, value in parent.items():
             if isinstance(value[1], dict):
@@ -254,13 +254,13 @@ class SettingManager():
 
     def __rebuild_setting(self) -> dict:
         """
-        重新构建设置并保存到文件中。
+        重新构建设置并保存到文件中. 
 
         参数:
             无
 
         返回值:
-        - temp(dict): 重新构建的设置。
+        - temp(dict): 重新构建的设置. 
         """
         temp = {}
         self.__scan_to_build(DEFAULT_SETTING, temp)
@@ -269,13 +269,13 @@ class SettingManager():
 
     def __open_file(self, file_path) -> str:
         """
-        打开文件并读取文件内容。
+        打开文件并读取文件内容. 
 
         参数:
-        - file_path(str): 文件路径。
+        - file_path(str): 文件路径. 
 
         返回值:
-        - temp(str): 文件内容。
+        - temp(str): 文件内容. 
         """
         with open(file_path, 'r', encoding='utf-8') as file:
             temp = file.read()
